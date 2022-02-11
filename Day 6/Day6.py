@@ -1,0 +1,1 @@
+# In day 6 i just learned how to use functions and while loop , no project for today
