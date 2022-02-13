@@ -5,14 +5,17 @@ print(art.logo)
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 def caesar(text,shift,direction):
-
+    shift=shift%25
     if direction=="encode":
         cipherText=""
         for letter in text:
-            position=alphabet.index(letter)
-            newposition=position +shift
-            newletter=alphabet[newposition%26]
-            cipherText+=newletter
+            if letter in alphabet:
+                position=alphabet.index(letter)
+                newposition=position +shift
+                newletter=alphabet[newposition%26]
+                cipherText+=newletter
+            else:
+                cipherText+=letter
         print(cipherText)
     elif direction=="decode":
         uncipherText=""
